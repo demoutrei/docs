@@ -1,0 +1,49 @@
+@import 'base.css';
+
+:root {
+  --directoryNavigation-width: 280px;
+}
+
+
+#directoryNavigation {
+  background-color: var(--dark-crust);
+  border-right: 2px solid white;
+  box-sizing: border-box;
+  height: 100%;
+  width: var(--directoryNavigation-width);
+
+  > header {
+    align-items: center;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    font-family: "Rubik";
+    height: 45px;
+    justify-content: space-between;
+    padding: 5px 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    > #directoryNavigation-title {
+      font-weight: 500;
+    }
+
+    > #directoryNavigation-home {
+      aspect-ratio: 1 / 1;
+      height: 80%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+#display {
+  box-sizing: border-box;
+  height: 100%;
+  width: calc(100% - var(--directoryNavigation-width));
+}

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+  --dark-crust: #11111B;
+  --dark-primary: #181825;
+  --dark-text: #CDD6F4;
+}
+
+
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  margin: 0;
+  overflow: clip;
+  width: 100vw;
+
+  &[data-theme="dark"] {
+    background-color: var(--dark-primary);
+    color: var(--dark-text);
+  }
+}
