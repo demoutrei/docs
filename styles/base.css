@@ -5,7 +5,10 @@
 
 :root {
   --dark-crust: #11111B;
+  --dark-overlay-0: #6C7086;
   --dark-primary: #181825;
+  --dark-surface-0: #1E1E2E;
+  --dark-surface-1: #313244;
   --dark-text: #CDD6F4;
 }
 

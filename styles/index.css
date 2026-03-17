@@ -39,6 +39,26 @@
       }
     }
   }
+
+  > main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    
+    > .navigation-item {
+      background-color: var(--dark-surface-0);
+      border-radius: 7px;
+      font-family: "Rubik";
+      font-size: 0.8em;
+      padding: 7px 10px;
+
+      &:hover {
+        background-color: var(--dark-overlay-0);
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 
@@ -46,4 +66,87 @@
   box-sizing: border-box;
   height: 100%;
   width: calc(100% - var(--directoryNavigation-width));
+
+  > header {
+    position: relative;
+    width: 100%;
+    
+    > #display-header-search-container {
+      background-color: var(--dark-surface-0);
+      border: 1px solid white;
+      border-radius: 15px;
+      box-sizing: border-box;
+      height: 30px;
+      left: 50%;
+      margin-bottom: 15px;
+      margin-top: 15px;
+      position: relative;
+      transform: translateX(-50%);
+      width: 275px;
+
+      > #display-header-search-input {
+        background-color: inherit;
+        border: none;
+        box-sizing: border-box;
+        color: var(--dark-text);
+        font-family: "Rubik";
+        height: 100%;
+        margin-left: 10px;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  > #content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: clip;
+    overflow-y: auto;
+    padding: 13px 18px;
+    width: 100%;
+
+    > .category {
+      aspect-ratio: 5 / 3;
+      background-color: var(--dark-surface-1);
+      border: 1px solid white;
+      border-radius: 7px;
+      box-sizing: border-box;
+      overflow: clip;
+      width: 250px;
+
+      &:hover {
+        cursor: pointer;
+      }
+      
+      > .category-cover {
+        aspect-ratio: 3 / 1;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+
+      > .category-content {
+        display: flex;
+        flex-direction: column;
+        font-family: "Rubik";
+        padding: 5px 10px;
+        padding-bottom: 8px;
+
+        > .category-title {
+          font-size: 1.2em;
+          font-weight: bold;
+        }
+
+        > .category-description {
+          font-size: 0.8em;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
 }

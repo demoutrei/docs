@@ -11,8 +11,31 @@
         <span id="directoryNavigation-title">demo.docs</span>
         <img id="directoryNavigation-home" src="assets/home.png">
       </header>
+      <main>
+        <div id="directoryNavigation-python" class="navigation-item">
+          <span class="navigation-item-name">Python</span>
+        </div>
+        <div id="directoryNavigation-java" class="navigation-item">
+          <span class="navigation-item-name">Java</span>
+        </div>
+      </main>
     </nav>
-    <main id="display"></main>
+    <main id="display">
+      <header>
+        <div id="display-header-search-container">
+          <input type="text" id="display-header-search-input" placeholder="Search">
+        </div>
+      </header>
+      <main id="content">
+        <section class="category">
+          <img class="category-cover">
+          <div class="category-content">
+            <span class="category-title">Python</span>
+            <span class="category-description">Python is a high-level, interpreted, general-purpose programming language known for its simple, readable syntax and versatility</span>
+          </div>
+        </section>
+      </main>
+    </main>
     <script type="module" src="scripts/index.js"></script>
   </body>
 </html>
