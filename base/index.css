@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+  --dark-crust: #11111B;
+  --dark-overlay-0: #6C7086;
+  --dark-primary: #181825;
+  --dark-surface-0: #1E1E2E;
+  --dark-surface-1: #313244;
+  --dark-text: #CDD6F4;
+  --directoryNavigation-width: 280px;
+}
+
+
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  margin: 0;
+  overflow: clip;
+  width: 100vw;
+
+  &[data-theme="dark"] {
+    background-color: var(--dark-primary);
+    color: var(--dark-text);
+  }
+}
+
+
+#directoryNavigation {
+  background-color: var(--dark-crust);
+  border-right: 2px solid white;
+  box-sizing: border-box;
+  height: 100%;
+  width: var(--directoryNavigation-width);
+
+  > header {
+    align-items: center;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    font-family: "Rubik";
+    height: 45px;
+    justify-content: space-between;
+    padding: 5px 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+
+    > #directoryNavigation-title {
+      font-weight: 500;
+    }
+
+    > #directoryNavigation-home {
+      aspect-ratio: 1 / 1;
+      height: 80%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  > main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    
+    > .navigation-item {
+      background-color: var(--dark-surface-0);
+      border-radius: 7px;
+      font-family: "Rubik";
+      font-size: 0.8em;
+      padding: 7px 10px;
+
+      &:hover {
+        background-color: var(--dark-overlay-0);
+        cursor: pointer;
+      }
+    }
+  }
+}
