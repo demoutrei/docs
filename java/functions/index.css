@@ -8,7 +8,7 @@
   padding: 10px;
   padding-top: 15px;
   position: relative;
-  width: calc(100% - var(--directoryNavigation-width) - var(--header-width));
+  width: calc(100% - var(--directoryNavigation-width));
 
   > header {
     border-left: 1px solid white;
@@ -21,7 +21,9 @@
     width: var(--header-width);
 
     > #display-navigationColumn {
-      height: 100%;
+      height: 100vh;
+      overflow-x: clip;
+      overflow-y: auto;
       position: relative;
 
       > a {
@@ -32,6 +34,12 @@
   }
 
   > #content {
+    height: 100vh;
+    overflow-x: clip;
+    overflow-y: auto;
+    position: relative;
+    width: calc(100% - var(--header-width));
+    
     h1 {
       margin: 0;
     }
