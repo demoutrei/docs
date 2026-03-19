@@ -30,6 +30,9 @@ export async function setupHook() {
     _ => {
       const pythonDirectoryNavigation = document.querySelector("#directoryNavigation-python");
       pythonDirectoryNavigation.addEventListener("click", (_) => window.open('./python', "_self"));
+
+      const javaDirectoryNavigation = document.querySelector("#directoryNavigation-java");
+      javaDirectoryNavigation.addEventListener("click", (_) => window.open('./java', "_self"));
       
       const pythonCategory = document.querySelector("#category-python");
       pythonCategory.addEventListener("click", (_) => window.open('./python', "_self"));

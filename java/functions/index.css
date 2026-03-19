@@ -1,0 +1,39 @@
+@import '../../base/index.css';
+
+
+#display {
+  --header-width: 200px;
+  
+  font-family: "Rubik";
+  padding: 10px;
+  padding-top: 15px;
+  position: relative;
+  width: calc(100% - var(--directoryNavigation-width) - var(--header-width));
+
+  > header {
+    border-left: 1px solid white;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: var(--header-width);
+
+    > #display-navigationColumn {
+      height: 100%;
+      position: relative;
+
+      > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  > #content {
+    h1 {
+      margin: 0;
+    }
+  }
+}
