@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="icon" href="https://cdn.discordapp.com/embed/avatars/2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
     <link rel="stylesheet" href="index.css">
     <title>demo.docs</title>
   </head>
@@ -14,9 +15,14 @@
       <main></main>
     </nav>
     <main id="display">
-      <header></header>
+      <header>
+        <nav id="display-navigationColumn">
+          <span id="display-navigationColumn-title">Table of Contents</span>
+        </nav>
+      </header>
       <main id="content"></main>
     </main>
     <script type="module" src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
   </body>
 </html>

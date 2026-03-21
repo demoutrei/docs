@@ -1,9 +1,15 @@
-import { addDirectory, addParentDirectory } from '../../base/index.js';
+import { addDirectory, addParentDirectory, enlistSections } from '../../base/index.js';
 
 
 export function setupHook() {
-  addParentDirectory();
+  addParentDirectory("../../");
   addDirectory("Introduction");
   addDirectory("Arrays");
   addDirectory("Functions");
+
+  document.querySelector("#directoryNavigation-introduction").addEventListener(
+    "click", (_) => window.open('../', "_self")
+  )
+
+  enlistSections(document.querySelector("#content"), 0);
 }

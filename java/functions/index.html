@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <link rel="icon" href="https://cdn.discordapp.com/embed/avatars/2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
     <link rel="stylesheet" href="index.css">
     <title>demo.docs</title>
   </head>
@@ -16,15 +17,204 @@
     <main id="display">
       <header>
         <nav id="display-navigationColumn">
-          <a href="#functions">Functions</a>
+          <span id="display-navigationColumn-title">Table of Contents</span>
         </nav>
       </header>
       <main id="content">
-        <section id="functions">
+        <section id="functions" name="Functions">
           <h1 class="section-title">Java Functions</h1>
+          <p>Functions in programming are blocks of reuseable code. Utilizing functions reduces the construct of repetitive code.</p>
+          <p>In Java, functions are referred to as methods, of which functions that are bound to a class or object. Below is an example of a Java method:</p>
+<pre>
+<code class="language-java">
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!"); // "Hello, World!\n"
+  }
+}
+</code>
+</pre>
+          <p>Methods are defined with the following keywords:</p>
+          <ol>
+            <li>
+              <code> public </code>/<code> private </code> -- Whether the method is accessible from outside the class or solely exclusive from within the class only.
+            </li>
+            <li>
+              <code> static </code> -- &lpar;Optional&rpar; Whether the method is a static method.
+            </li>
+            <li>
+              &lpar;Required&rpar; Return type of the method.
+            </li>
+            <li>
+              Unique identifier name of the method.
+            </li>
+            <li>
+              &lpar;Optional&rpar; Method parameters.
+            </li>
+          </ol>
+          <p>
+            The code of the functions are only executed when the function is called. To do so, the callable &lpar;function/method&rpar; is retrieved and suffixed with parentheses <code> &lpar;&rpar; </code> and its corresponding arguments, if applicable.
+          </p>
+<pre>
+<code class="language-java">
+class Main {
+  static void greet(String name) {
+    System.out.printf("Hello, %s!%n", name);
+  }
+
+  public static void main(String[] args) {
+    greet("demoutrei"); // "Hello, demoutrei!\n"
+  }
+}
+</code>
+</pre>
+          <section id="functions-static" name="Static Functions">
+            <h2 class="section-title">Static Functions</h2>
+            <p>Static functions are methods that don't require an instance object of its parent class. These types of methods are defined with a <code> static </code> keyword.</p>
+<pre>
+<code class="language-java">
+public class Main {
+  public static void helloWorld() {
+    System.out.println("Hello, World!");
+  }
+  
+  public static void main(String[] args) {
+    Main.helloWorld(); // "Hello, World!\n"
+  }
+}
+</code>
+</pre>
+          </section>
+          <section id="functions-nonStatic" name="Non-Static Functions">
+            <h2 class="section-title">Non-Static Functions</h2>
+            <p>
+              Non-static functions, also called "instance methods," are bound to a distinct instance of a class. Non-static functions are defined by opting out the <code> static </code> keyword in the function definition.
+            </p>
+<pre>
+<code class="language-java">
+class Player {
+  String name;
+
+  Player(String name) {
+    this.name = name;
+  }
+
+  void greet() {
+    System.out.printf("Hello, %s!%n", this.name);
+  }
+}
+
+
+class Main {
+  public static void main(String[] args) {
+    Player player = new Player("demoutrei");
+    player.greet(); // "Hello, demoutrei!\n"
+  }
+}
+</code>
+</pre>
+          </section>
+        </section>
+        <section id="parameters" name="Parameters">
+          <h1 class="section-title">Function Parameters</h1>
+          <p>
+            Parameters are arguments that you can pass into a function/method. These are defined inside the parentheses <code> &lpar;&rpar; </code> in the function definition line &lpar;next to the function name&rpar;.
+          </p>
+          <p>
+            To create a parameter, define its data type, followed by the unique identifier name for the parameter:
+          </p>
+<pre>
+<code class="language-java">
+class Main {
+  static void greet(String name) {
+    System.out.printf("Hello, %s!%n", name);
+  }
+}
+</code>
+</pre>
+          <section id="parameter-arguments" name="Arguments">
+            <h2 class="section-title">Arguments</h2>
+            <p>
+              Arguments are variables/values that you pass into a matching parameter in the called function.
+            </p>
+            <p>
+              Arguments passed into the function call must match the amount of parameters there are, though not necessarily have to match the parameter name &lpar;although recommended&rpar;.
+            </p>
+            <p>
+              In Java, arguments must be passed as positional, matching the expected parameter.
+            </p>
+<pre>
+<code class="language-java">
+class Main {
+  static void introduce(String name, int age) {
+    System.out.printf("Hello, my name is %s!%n", name);
+    System.out.printf("I am %d years old%n", age);
+  }
+
+  public static void main(String[] args) {
+    introduce("demoutrei", 20);
+    /*
+      "Hello, my name is demoutrei!\n"
+      "I am 20 years old\n"
+    */
+  }
+}
+</code>
+</pre>
+          </section>
+        </section>
+        <section id="function-returns" name="Function Returns">
+          <h1 class="section-title">Function Returns</h1>
+          <p>
+            The <code> return </code> keyword is used to return a value from a executing function. If a variables/value is not present, it defaults to <code> null </code>.
+          </p>
+          <p>
+            The returned value must match the return type in the function definition.
+          </p>
+<pre>
+<code class="language-java">
+class Point {
+  int x, y;
+
+  Point() {
+    this(0, 0);
+  }
+
+  Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  Point center() {
+    return new Point(x / 2, y / 2);
+  }
+}
+
+class Main {
+  static int add(int x, int y) {
+    return x + y;
+  }
+  
+  public static void main(String[] args) {
+    Point point = new Point(4, 6);
+    Point center = point.center();
+    System.out.printf("center = Point(%d, %d)%n", center.x, center.y); // "center = Point(2, 3)\n"
+    System.out.printf("%d%n", add(center.x, center.y)); // "5\n"
+  }
+}
+</code>
+</pre>
         </section>
       </main>
     </main>
-    <script type="module" src="index.js"></script>
+    <script type="module">
+      import { setupHook } from './index.js';
+
+      setupHook();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
   </body>
 </html>

@@ -19,7 +19,8 @@ body {
   flex-direction: row;
   height: 100vh;
   margin: 0;
-  overflow: clip;
+  overflow-x: clip;
+  overflow-y: auto;
   width: 100vw;
 
   &[data-theme="dark"] {
@@ -33,7 +34,7 @@ body {
   background-color: var(--dark-crust);
   border-right: 2px solid white;
   box-sizing: border-box;
-  height: 100%;
+  height: 100vh;
   width: var(--directoryNavigation-width);
 
   > header {
@@ -46,8 +47,6 @@ body {
     height: 45px;
     justify-content: space-between;
     padding: 5px 10px;
-    position: sticky;
-    top: 0;
     width: 100%;
 
     > #directoryNavigation-title {
@@ -80,6 +79,135 @@ body {
       &:hover {
         background-color: var(--dark-overlay-0);
         cursor: pointer;
+      }
+    }
+  }
+}
+
+
+#display {
+  --header-width: 200px;
+  
+  box-sizing: border-box;
+  font-family: "Rubik";
+  position: relative;
+  width: calc(100% - var(--directoryNavigation-width));
+
+  > header {
+    border-left: 1px solid white;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: var(--header-width);
+
+    > #display-navigationColumn {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow-x: clip;
+      overflow-y: auto;
+      position: sticky;
+      right: 0;
+      top: 0;
+
+      > #display-navigationColumn-title {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      
+      > .tableOfContents-item {
+        border-radius: 5px;
+        color: inherit;
+        font-size: 0.9em;
+        padding: 3px 5px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: var(--dark-overlay-0);
+          cursor: pointer;
+        }
+        
+        &[data-level] {
+          font-size: 0.8em;
+        }
+
+        &[data-level="0"] {
+          font-size: 0.9em;
+          margin-top: 7px;
+        }
+      }
+    }
+  }
+
+  > #content {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-x: clip;
+    overflow-y: auto;
+    padding: 0 10px;
+    padding-bottom: 10px;
+    position: relative;
+    scrollbar-width: none;
+    width: calc(100% - var(--header-width));
+
+    section {      
+      margin-top: 10px;
+      
+      > .section-title {
+        margin: 0;
+        margin-top: 15px;
+      }
+  
+      p {
+        font-size: 0.9em;
+        margin: 0;
+        margin-top: 0.75em;
+
+        code {
+          background-color: var(--dark-crust);
+          border-radius: 3px;
+          white-space: pre-wrap;
+        }
+      }
+
+      ol, ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 1.5em;
+        
+        > li {
+          font-size: 0.85em;
+          
+          &::marker {
+            font-size: 0.75em;
+          }
+
+          code {
+            background-color: var(--dark-crust);
+            border-radius: 3px;
+            white-space: pre-wrap;
+          }
+        }
+      }
+  
+      pre {
+        margin: 0;
+        margin-top: 8px;
+  
+        > code {
+          background-color: var(--dark-crust);
+          border-radius: 13px;
+          font-size: 0.9em;
+          padding: 0;
+          padding-bottom: 1em;
+          padding-left: 1em;
+          padding-right: 1em;
+          scrollbar-width: none;
+        }
       }
     }
   }
